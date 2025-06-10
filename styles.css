@@ -1,0 +1,463 @@
+/* =======================
+   HERITAGE WALK THEME CSS
+   ======================= */
+
+/* Root Palette - Optimized for Modern Minimalism & Contrast */
+:root {
+  --bistre: #2C180B; /* Darker for primary text and backgrounds */
+  --offwhite: #FBF9F7; /* Lighter, cleaner background */
+  --goldenrod: #E0A725; /* Vibrant accent for highlights */
+  --bronze: #C48E2E; /* Softer accent for subtle details */
+  --seal-brown: #6A3A1C; /* Mid-tone for secondary text/borders */
+}
+
+/* Reset and fonts */
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  background: var(--offwhite); /* Clean, light background */
+  color: var(--bistre); /* High-contrast dark text */
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul { list-style: none; padding: 0; margin: 0; }
+
+/* Navbar */
+.navbar {
+  background: var(--bistre); /* Dark, striking navbar */
+  display: flex;
+  align-items: center;
+  padding: 0 4vw; /* Increased horizontal padding */
+  height: 70px; /* Taller navbar */
+  justify-content: space-between;
+  box-shadow: none; /* Minimalistic, no shadow */
+  position: sticky; top: 0; z-index: 100;
+}
+.navbar .logo {
+  font-weight: 700; /* Bolder logo */
+  font-size: 1.4rem; /* Larger logo */
+  color: var(--goldenrod); /* Vibrant accent for logo */
+  letter-spacing: 1.5px; /* Tighter letter-spacing */
+}
+.navbar ul {
+  display: flex;
+  gap: 2rem; /* More space between nav items */
+}
+.navbar li a {
+  padding: 10px 18px; /* More padding for links */
+  border-radius: 6px; /* Slightly more rounded */
+  transition: background .2s ease-out, color .2s ease-out; /* Smoother transition */
+  color: var(--offwhite); /* Light text on dark navbar */
+  font-weight: 500;
+}
+.navbar li a.active,
+.navbar li a:hover {
+  background: var(--goldenrod); /* Strong accent on hover/active */
+  color: var(--bistre); /* Dark text on accent */
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3.5rem; /* Increased gap for more breathing room */
+  padding: 5rem 5vw 4rem 5vw; /* More vertical padding */
+  background: var(--bistre); /* Solid dark background */
+  color: var(--offwhite); /* Light text */
+}
+.hero-img {
+  flex: 1 1 380px; /* Adjusted base size */
+  max-width: 550px; /* Larger max-width */
+  border-radius: 12px; /* Nicer rounded corners */
+  box-shadow: none; /* Minimalistic - no shadow */
+  border: 4px solid var(--goldenrod); /* Strong accent border */
+  object-fit: cover;
+  height: 400px; /* Defined height for image */
+}
+.hero-content {
+  flex: 1 1 400px; /* Adjusted base size */
+  min-width: 320px;
+}
+.hero-content h1 {
+  color: var(--goldenrod); /* Accent heading */
+  font-size: 3.5rem; /* Larger, bolder heading */
+  margin-top: 0; /* Align to top */
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  text-shadow: none;
+}
+.hero-content p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+.hero-content .btn {
+  margin-top: 2.5rem; /* More space above button */
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background: var(--goldenrod); /* Accent background */
+  color: var(--bistre); /* Dark text on accent */
+  font-weight: 600; /* Bolder text */
+  padding: 1rem 2.5rem; /* More padding */
+  border-radius: 6px; /* Slightly more rounded */
+  border: none;
+  cursor: pointer;
+  transition: background .2s ease-out, color .2s ease-out;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.05rem;
+  box-shadow: none; /* No shadow */
+  letter-spacing: 0.8px;
+}
+.btn:hover {
+  background: var(--bronze); /* Secondary accent on hover */
+  color: var(--offwhite); /* Light text on hover */
+}
+
+/* Scroller Section */
+.places-section {
+  background: var(--offwhite); /* Light background */
+  padding: 4rem 0; /* More vertical padding */
+  overflow: hidden;
+  color: var(--bistre);
+}
+.places-section h2 {
+  color: var(--bistre); /* Dark heading */
+  text-align: center;
+  margin-top: 0; /* Align to top */
+  margin-bottom: 2.5rem; /* More space below heading */
+  font-weight: 700;
+  font-size: 2.6rem;
+  text-shadow: none;
+}
+.scroller {
+  overflow: hidden;
+  width: 100%;
+}
+.scroller-track {
+  display: flex;
+  gap: 2.5rem; /* Slightly more gap */
+  animation: scroll 30s linear infinite;
+}
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.place-card {
+  background: var(--offwhite); /* Clean card background */
+  color: var(--bistre);
+  border-radius: 10px; /* Nicer rounded corners */
+  min-width: 280px; /* Slightly wider cards */
+  max-width: 280px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06); /* Subtle, modern shadow */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--seal-brown); /* Subtle border */
+}
+.place-card img {
+  width: 100%;
+  height: 160px; /* Taller images */
+  object-fit: cover;
+  border-bottom: 1px solid var(--seal-brown); /* Subtle border */
+}
+.place-card h4 {
+  margin: 1rem 0 0.6rem 0; /* More padding */
+  color: var(--goldenrod); /* Accent title */
+  text-shadow: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.place-card p {
+  margin: 0 0 1.2rem 0; /* More padding */
+  font-size: 0.95rem;
+  color: var(--seal-brown); /* Secondary text color */
+  padding: 0 1rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Why Section */
+.why-section {
+  background: var(--goldenrod); /* Accent background */
+  color: var(--bistre); /* Dark text */
+  padding: 5rem 5vw; /* More padding */
+  border-radius: 0; /* No border-radius */
+  margin-bottom: 0;
+  box-shadow: none;
+}
+.why-section header h2 {
+  font-size: 2.8rem;
+  margin-top: 0; /* Align to top */
+  margin-bottom: 1rem;
+  color: var(--bistre);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: none;
+}
+.why-section header p {
+  text-align: center;
+  font-size: 1.05rem;
+  margin-bottom: 3.5rem; /* More space */
+  color: var(--seal-brown);
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+.why-section .container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+.why-section .reason {
+  background: var(--offwhite); /* Light background for reasons */
+  margin-bottom: 2rem; /* Consistent margin */
+  border-radius: 10px; /* Nicer rounded corners */
+  padding: 2rem 2.5rem; /* More padding */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07); /* Subtle shadow */
+  border-left: 6px solid var(--bronze); /* Accent border */
+}
+.why-section .reason h3 {
+  color: var(--seal-brown); /* Darker secondary heading */
+  font-size: 1.4rem;
+  margin-top: 0; /* Align to top */
+  margin-bottom: .8rem;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: none;
+}
+.why-section .reason p {
+  color: var(--bistre);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+.why-section .cta {
+  margin-top: 4rem; /* More space above CTA */
+  text-align: center;
+}
+.why-section .cta h3 {
+  margin-bottom: 1.5rem;
+  color: var(--bistre);
+  text-shadow: none;
+  font-size: 1.8rem;
+}
+.why-section .cta .btn {
+  background: var(--bistre); /* Dark background for CTA button */
+  color: var(--offwhite); /* Light text on dark button */
+  padding: 1.1rem 2.8rem; /* More padding */
+  border-radius: 6px;
+  font-size: 1.1rem;
+}
+.why-section .cta .btn:hover {
+  background: var(--seal-brown); /* Slightly lighter dark on hover */
+  color: var(--goldenrod); /* Accent on hover */
+}
+@media (max-width:600px) {
+  .why-section {
+    padding: 3rem 1.5vw;
+  }
+  .why-section .reason {
+    padding: 1.5rem 1.2rem;
+  }
+}
+
+/* Packages Page */
+.package-info {
+  padding: 4.5rem 5vw; /* More padding */
+  color: var(--bistre);
+  background: var(--offwhite);
+}
+.package-info h2 {
+    color: var(--bistre);
+    text-align: center;
+    font-size: 2.6rem;
+    margin-top: 0; /* Align to top */
+    margin-bottom: 3rem;
+}
+.package-row {
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* Increased gap */
+  margin-bottom: 4rem; /* More margin */
+}
+.package-row.reverse {
+  flex-direction: row-reverse;
+}
+.package-row img {
+  width: 48vw; /* Larger image width */
+  max-width: 500px; /* Larger max-width */
+  border-radius: 10px; /* Nicer rounded corners */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* More noticeable but clean shadow */
+  border: 3px solid var(--goldenrod); /* Accent border */
+  height: 350px; /* Defined height */
+  object-fit: cover;
+}
+.package-row div {
+  flex: 1;
+}
+.package-row h3 {
+  color: var(--goldenrod); /* Accent heading */
+  margin-top: 0; /* Align to top */
+  margin-bottom: .8rem;
+  text-shadow: none;
+  font-size: 2rem;
+}
+.package-row p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--seal-brown);
+}
+
+/* Booking Page - ADVANCED FORM */
+.booking-section {
+  padding: 4.5rem 5vw 3.5rem 5vw; /* More padding */
+  max-width: 850px; /* Slightly narrower for focus */
+  margin: 3rem auto; /* More margin top/bottom */
+  background: var(--offwhite);
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1); /* Clearer shadow */
+  border: 1px solid var(--bronze); /* Subtle border */
+}
+.booking-section h2 {
+  text-align: center;
+  color: var(--bistre);
+  font-size: 2.6rem;
+  margin-top: 0; /* Align to top */
+  margin-bottom: 3rem; /* More space */
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* More gap between form groups */
+}
+.form-row {
+  display: flex;
+  gap: 2.5rem; /* More gap in rows */
+  margin-bottom: 0.8rem;
+}
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem; /* Slight increase in gap */
+}
+.form-group.address {
+  flex: 2;
+}
+.booking-form label {
+  font-weight: 500;
+  color: var(--seal-brown); /* Darker label text */
+  font-size: 1.05rem; /* Slightly larger label */
+}
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  padding: 1rem; /* More padding */
+  border-radius: 5px; /* Slightly more rounded */
+  border: 1px solid var(--seal-brown); /* Darker, thinner border */
+  background: var(--offwhite);
+  color: var(--bistre);
+  font-size: 1rem;
+  font-family: inherit;
+  margin-bottom: .2rem;
+  transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: var(--goldenrod); /* Accent border on focus */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(224,167,37,0.25); /* Clearer glow on focus */
+}
+.citizen-radio {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: .5rem;
+}
+.citizen-radio label {
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--seal-brown);
+}
+.radio-label {
+  margin-left: 0.3rem; /* Slightly more margin */
+  margin-right: 1.5rem; /* More margin */
+}
+.booking-form button.btn {
+  margin: 2.5rem auto 0 auto; /* More margin */
+  padding: 1.2rem 3rem; /* More padding */
+  font-size: 1.15rem; /* Slightly larger text */
+  background: var(--goldenrod); /* Accent background */
+  color: var(--bistre); /* Dark text */
+  box-shadow: none; /* No shadow */
+}
+.booking-form button.btn:hover {
+  background: var(--bronze); /* Secondary accent on hover */
+  color: var(--offwhite); /* Light text on hover */
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .form-row {
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+  .booking-section {
+    padding: 3rem 3vw 2.5rem 3vw;
+  }
+}
+
+/* Route Page */
+.route-section {
+  padding: 4.5rem 5vw 3.5rem 5vw; /* More padding */
+  text-align: center;
+  background: var(--offwhite);
+  color: var(--bistre);
+}
+.route-section h2 {
+  color: var(--bistre); /* Dark heading */
+  margin-top: 0; /* Align to top */
+  margin-bottom: 3rem; /* More space */
+  text-shadow: none;
+  font-size: 2.6rem;
+}
+.route-map-img {
+  width: 90vw;
+  max-width: 850px; /* Slightly larger max-width */
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12); /* Clearer shadow */
+  border: 4px solid var(--goldenrod); /* Strong accent border */
+}
+
+/* Footer */
+footer {
+  background: var(--bistre); /* Dark footer */
+  color: var(--offwhite); /* Light text */
+  padding: 3rem 0 2rem 0; /* More padding */
+  text-align: center;
+  margin-top: 3rem; /* More margin */
+  box-shadow: none;
+}
+footer h4 {
+  color: var(--goldenrod); /* Accent heading */
+  margin-bottom: 1rem;
+  text-shadow: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+footer p {
+    font-size: 0.95rem;
+    color: var(--bronze); /* Secondary accent for small text */
+    line-height: 1.5;
+}

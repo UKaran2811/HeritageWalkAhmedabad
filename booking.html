@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Book Your Walk — Ahmedabad Heritage Walk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Ahmedabad Heritage Walk</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="booking.html" class="active">Booking</a></li>
+      <li><a href="route.html">Route</a></li>
+    </ul>
+  </nav>
+  <section class="booking-section">
+    <h2>Personal Details</h2>
+    <form class="booking-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input id="firstName" name="firstName" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input id="lastName" name="lastName" type="text" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="contact">Contact Number</label>
+          <input id="contact" name="contact" type="tel" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group address">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input id="city" name="city" type="text" required>
+          <label for="state">State</label>
+          <input id="state" name="state" type="text" required>
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="">Please select</option>
+            <option value="India">India</option>
+            <option value="Other">Other</option>
+          </select>
+          <div class="citizen-radio">
+            <label>Select Citizen</label>
+            <input type="radio" id="citizen-indian" name="citizen" value="indian" checked>
+            <label for="citizen-indian" class="radio-label">indian</label>
+            <input type="radio" id="citizen-others" name="citizen" value="others">
+            <label for="citizen-others" class="radio-label">others</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="idproof">Select ID Proof</label>
+          <select id="idproof" name="idproof" required>
+            <option value="">Please select</option>
+            <option value="aadhaar">Aadhaar Card</option>
+            <option value="pan">PAN Card</option>
+            <option value="passport">Passport</option>
+            <option value="voter">Voter ID</option>
+            <option value="dl">Driving License</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="idnumber">ID No.</label>
+          <input id="idnumber" name="idnumber" type="text" required>
+        </div>
+      </div>
+      <!-- Add booking date, payment fields, etc. below as needed -->
+      <button type="submit" class="btn">Pay ₹1 & Confirm</button>
+    </form>
+  </section>
+  <footer>
+    <h4>Contact Us</h4>
+    <p>Email: heritagewalk@ahmedabad.com</p>
+    <p>Phone: +91 12345 67890</p>
+    <p>Address: Old City, Ahmedabad, Gujarat</p>
+  </footer>
+</body>
+</html>

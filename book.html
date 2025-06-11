@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Your Heritage Walk</title>
+  <link rel="stylesheet" href="style/book.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="logo">Heritage Walk</div>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="route.html">Route</a>
+        <a href="packages.html">Walk</a>
+        <a href="book.html">Booking</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Booking Info -->
+  <section class="booking-info">
+    <h2>Book Your Heritage Walk</h2>
+   
+  </section>
+
+  <!-- Booking Form -->
+  <section class="booking-form-container">
+    <form class="booking-form" method="POST" action="payment.php">
+      <h3>Walk Details</h3>
+      <label for="date">Date of Walk*</label>
+      <input type="date" id="date" name="date" required />
+
+      
+
+      <br><br>
+      <h3>Your Details</h3>
+      <label for="name">Full Name*</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="phone">Contact Number*</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" />
+
+      <label for="email">Email Address*</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="city">City*</label>
+      <input type="text" id="city" name="city" required />
+
+      <label for="state">State*</label>
+      <input type="text" id="state" name="state" required />
+
+      <label for="country">Country*</label>
+      <select id="country" name="country" required>
+        <option value="">Select Country</option>
+        <option>India</option>
+        <option>USA</option>
+        <option>UK</option>
+        <option>Canada</option>
+        <option>Australia</option>
+        <option>Germany</option>
+        <option>France</option>
+        <option>Japan</option>
+        <option>Other</option>
+      </select>
+
+      <label>Citizen Type*</label>
+      <div class="radio-group">
+        <label><input type="radio" name="citizen" value="indian" required> Indian</label>
+        <label><input type="radio" name="citizen" value="other"> Other</label>
+      </div>
+
+      <label for="guests">Number of Guests*</label>
+      <input type="number" id="guests" name="guests" min="1" required />
+
+      <button type="submit" class="cta-button">Proceed to Payment</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Heritage Walk Ahmedabad. All rights reserved.</p>
+      <p>Contact: info@heritagewalk.com | 📍 Ahmedabad, India</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      // This would be replaced by a fetch call to your PHP to check availability
+      const totalSlots = 30; // example
+      document.getElementById("slots").textContent = totalSlots;
+    });
+  </script>
+ 
+
+</body>
+</html>

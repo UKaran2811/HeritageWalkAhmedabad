@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar (same as index) *//* Navbar (same as index) */
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ✅ Fixed Mobile Nav Toggle */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 64px;
+    right: 1rem;
+    width: 200px;
+    box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+    padding: 1rem;
+    z-index: 1001;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1002; /* Ensures it's above nav */
+  }
+
+  .booking-form-container {
+    padding: 1rem;
+  }
+}
+
+/* Hero Section */
+.route-hero {
+  position: relative;
+  background: url('../images/walk.jpg') center/cover no-repeat;
+  padding: 5rem 2rem;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.route-hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent dark overlay */
+  z-index: 1;
+}
+
+.route-hero h1,
+.route-hero p {
+  position: relative;
+  z-index: 2;
+}
+
+.route-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* optional */
+}
+
+.route-hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* optional */
+}
+
+
+
+.cta-button {
+  position: relative; /* 👈 ADD THIS LINE */
+  background-color: #7B3F00;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 2; /* Enough to appear above the ::after overlay */
+}
+
+/* Route Full Image */
+.route-image-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Walk Types Section */
+.walk-types {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+.single-walk {
+  max-width: 400px;
+  text-align: center;
+}
+
+.walk-type {
+  text-align: center;
+}
+
+.walk-type img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.walk-type h2 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive Navbar */

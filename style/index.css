@@ -1,0 +1,265 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfaf5;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #372e29;
+}
+
+
+
+/* Hero Section */
+.hero {
+  background: url("../images/banner.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  /* background-color: #3b2f2f; */
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* background: rgba(0, 0, 0, 0.5); */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #dfa952;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-button:hover {
+  background-color: #bf8c40;
+}
+
+@media (max-width: 768px) {
+ .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+    
+}
+
+/* About Section */
+.about {
+  padding: 3rem 2rem;
+  background-color: #fffaf3;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.about-content div {
+  flex: 1;
+}
+
+/* Highlights */
+.highlights {
+  background-color: #f4eadd;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.highlight-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonials */
+.testimonials {
+  background-color: #fffdf8;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.testimonial {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Why Join */
+.why-join {
+  background-color: #f0e8de;
+  padding: 3rem 2rem;
+}
+
+.why-join h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background-color: white;
+  border-left: 5px solid #b99363;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
+.footer {
+  background-color: #2b1d14;
+  color: #e8dccc;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+
+
+
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; /* 👈 REQUIRED for nav-links dropdown to anchor correctly */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 64px;
+    right: 1rem;
+    width: 200px;
+    box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .booking-form-container {
+    padding: 1rem;
+  }
+}

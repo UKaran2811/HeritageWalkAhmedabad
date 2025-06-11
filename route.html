@@ -1,30 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Route Map — Ahmedabad Heritage Walk</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Heritage Walk Routes</title>
+  <link rel="stylesheet" href="style/route.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
+  <script defer src="navbar.js"></script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">Ahmedabad Heritage Walk</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="packages.html">Packages</a></li>
-      <li><a href="booking.html">Booking</a></li>
-      <li><a href="route.html" class="active">Route</a></li>
-    </ul>
-  </nav>
-  <section class="route-section">
-    <h2>Route Map</h2>
-    <img src="images/route.jpg" alt="Heritage Walk Route" class="route-map-img">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="logo">Heritage Walk</div>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="route.html">Route</a>
+        <a href="packages.html">Walk</a>
+        <a href="book.html">Booking</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="route-hero">
+    <div class="hero-content">
+      <h1>Choose Your Path Through History</h1>
+      <p>Start your heritage walk for just ₹1 – pay the rest during the walk.</p>
+      <br><br>
+      <a href="book.html" class="cta-button">Book Now</a>
+    </div>
   </section>
-  <footer>
-    <h4>Contact Us</h4>
-    <p>Email: heritagewalk@ahmedabad.com</p>
-    <p>Phone: +91 12345 67890</p>
-    <p>Address: Old City, Ahmedabad, Gujarat</p>
+
+
+
+<!-- Walk Options -->
+<section class="walk-types">
+  <div class="walk-type single-walk">
+    <img src="images/morning_walk.jpg" alt="Morning Walk">
+    <h2>Morning Walk</h2>
+    <p>Witness the city awaken with golden rays, temple bells, and fresh smells of traditional breakfasts.</p>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Heritage Walk Ahmedabad. All rights reserved.</p>
+      <p>Contact: info@heritagewalk.com | 📍 Ahmedabad, India</p>
+    </div>
   </footer>
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+});
+
+</script>
+
 </body>
 </html>
